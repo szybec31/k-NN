@@ -4,3 +4,4 @@ scikit-learn
 scipy
 stream-learn
 imbalanced-learn
+pandas

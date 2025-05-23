@@ -2,8 +2,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 from Classification import *
 from Read_data import *
+from Operations import *
 
-X,y = read_samples()
+from ucimlrepo import fetch_ucirepo
 
-plt.scatter(X[:,0],X[:,1],c=y)
-plt.show()
+# fetch dataset
+steel_plates_faults = fetch_ucirepo(id=198)
+
+# data (as pandas dataframes)
+X = steel_plates_faults.data.features
+y = steel_plates_faults.data.targets
+
+# metadata
+print(steel_plates_faults.metadata)
+
+# variable information
+print(steel_plates_faults.variables)
