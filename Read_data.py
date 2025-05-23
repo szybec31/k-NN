@@ -1,38 +1,51 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 
-def read_samples():
-    n_samp = 700#int(input('enter the number of samples: '))
-    n_class = 2#int(input('enter the number of classes: '))
-    rand = 40
-    X,y = make_classification(n_samples=n_samp,n_classes=n_class,random_state=rand)
+def synthetic_data():
+    # Wygenerowanie Danych syntetycznych
+    X,y = make_classification(
+    n_samples=1200,
+    n_features=2,
+    n_informative=2,
+    n_redundant=0,
+    n_classes=3,
+    n_clusters_per_class=1,
+    class_sep=1.5,
+    random_state=42)
 
+    # Wyświetlenie danych syntetycznych na wykresie
+    X0 = X[y == 0]
+    X1 = X[y == 1]
+    X2 = X[y == 2]
+
+    plt.title("Dane Syntetyczne")
+    plt.xlabel("oś pozioma x")
+    plt.ylabel("oś pionowa y")
+    plt.scatter(X0[:, 0], X0[:, 1], c="gray", label="Klasa 0")
+    plt.scatter(X1[:, 0], X1[:, 1], c="green", label="Klasa 1")
+    plt.scatter(X2[:, 0], X2[:, 1], c="blue", label="Klasa 2")
+    plt.legend()
+    plt.show()
 
     return X,y
 
-def read_banknotes():
-    # Wczytanie danych z pliku csv
-    df_banknotes = pd.read_csv("data_banknote_auth.csv", header=None)
+def dry_beans():
+    data = pd.read_csv("datasets/Dry_Bean.csv",delimiter=";")
+    print(data.values[:,-1])
+    print(data.shape)
+#dry_beans()
 
-    # Nadanie nazw kolumnom
-    df_banknotes.columns = ["Variance", "Skewness", "Kurtosis", "Entropy", "Class"]
+def steel_plates_defection():
+    data = pd.read_csv("datasets/Steel.csv",delimiter=";")
+    print(data.values[:,-1])
+    print(data.shape)
+#steel_plates_defection()
 
-    # Podgląd pierwszych wierszy
-    print(df_banknotes)
-    return df_banknotes
 
-def read_wines():
-    # Lista nazw kolumn (pierwsza kolumna to klasa wina)
-    column_names = [
-        "Class", "Alcohol", "Malic_Acid", "Ash", "Alcalinity", "Magnesium",
-        "Total_Phenols", "Flavanoids", "Nonflav_Phenols", "Proanthocyanins",
-        "Color_Intensity", "Hue", "OD280_OD315", "Proline"
-    ]
-
-    # Wczytanie danych z pliku csv
-    df_wine = pd.read_csv("data_wine.csv", header=None, names=column_names)
-
-    # Podgląd pierwszych wierszy
-    print(df_wine)
-    return df_wine
+def sensors():
+    data = pd.read_csv("datasets/Sensorless_drive_diagnosis.csv",delimiter=";")
+    print(data.values[:,-1])
+    print(data.shape)
+#sensors()
