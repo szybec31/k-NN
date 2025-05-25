@@ -13,7 +13,7 @@ def synthetic_data():
     n_classes=3,
     n_clusters_per_class=1,
     class_sep=1.5,
-    random_state=42)
+    random_state=1)
 
     # Wyświetlenie danych syntetycznych na wykresie
     X0 = X[y == 0]

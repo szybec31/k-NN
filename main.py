@@ -1,20 +1,25 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from Classification import *
-from Read_data import *
-from Operations import *
+from Classification import Knn_with_OSR
+from Syntetic_data import X_train, X_test, y_train, y_test
 
-from ucimlrepo import fetch_ucirepo
+# Inicjalizacja klasyfikatora KNN z k=3
+knn = Knn_with_OSR(k=3)
 
-# fetch dataset
-steel_plates_faults = fetch_ucirepo(id=198)
+# Trenowanie modelu na danych treningowych
+knn.fit(X_train, y_train)
 
-# data (as pandas dataframes)
-X = steel_plates_faults.data.features
-y = steel_plates_faults.data.targets
+# Testowanie modelu na danych testowych z różnymi metrykami
+# metrics = ["euclidean", "manhattan", "minkowski", "squared_euclidean", "chebyshev"] - tu dla wszystkich metryk
+metrics = ["euclidean"] # - tu dla pojedynczej metryki
 
-# metadata
-print(steel_plates_faults.metadata)
+print("Wyniki predykcji dla różnych metryk odległości:")
+for metric in metrics:
+    predictions = knn.predict(X_test, metric=metric)
+    print(f"Metryka: {metric}, Predykcje: {predictions}")
 
-# variable information
-print(steel_plates_faults.variables)
+# Obliczanie i wyświetlanie procentu poprawnych predykcji
+print("\nProcent poprawnych predykcji dla różnych metryk odległości:")
+for metric in metrics:
+    predictions = knn.predict(X_test, metric=metric)
+    accuracy = np.mean(predictions == y_test) * 100
+    print(f"Metryka: {metric}, Procent poprawnych predykcji: {accuracy:.2f}%")
