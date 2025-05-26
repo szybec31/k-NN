@@ -4,8 +4,9 @@ from sklearn.base import BaseEstimator
 
 class Knn_with_OSR(BaseEstimator):
 
-    def __init__(self, k):
+    def __init__(self, k, threshold):
         self.k = k
+        self.threshold = threshold
 
     def fit(self, X_train, y_train):
         self.X_train = X_train
@@ -50,6 +51,11 @@ class Knn_with_OSR(BaseEstimator):
             k_nearest_labels = [self.y_train[i] for i in k_indices]
             # Głosowanie większościowe do której klasy przydzielić nowy punkt
             most_common = max(set(k_nearest_labels), key=k_nearest_labels.count)
+            min_distance = np.min(distances)
+
+            # Sprawdzenie progu odległości
+            if min_distance > self.threshold:
+                most_common = max(set(self.y_train)) + 1
             # Dodanie klasy do listy predykcji
             predictions.append(most_common)
         # Zwrócenie tablicy z predykcjami

@@ -3,14 +3,14 @@ from Classification import Knn_with_OSR
 from Syntetic_data import X_train, X_test, y_train, y_test
 
 # Inicjalizacja klasyfikatora KNN z k=3
-knn = Knn_with_OSR(k=3)
+knn = Knn_with_OSR(k=3, threshold=0.2)
 
 # Trenowanie modelu na danych treningowych
 knn.fit(X_train, y_train)
 
 # Testowanie modelu na danych testowych z różnymi metrykami
-# metrics = ["euclidean", "manhattan", "minkowski", "squared_euclidean", "chebyshev"] - tu dla wszystkich metryk
-metrics = ["euclidean"] # - tu dla pojedynczej metryki
+metrics = ["euclidean", "manhattan", "minkowski", "squared_euclidean", "chebyshev"] #- tu dla wszystkich metryk
+#metrics = ["euclidean"] # - tu dla pojedynczej metryki
 
 print("Wyniki predykcji dla różnych metryk odległości:")
 for metric in metrics:
