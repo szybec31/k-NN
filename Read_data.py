@@ -5,15 +5,15 @@ from sklearn.datasets import make_classification
 
 def synthetic_data():
     # Wygenerowanie Danych syntetycznych
-    X,y = make_classification(
-    n_samples=1200,
-    n_features=2,
-    n_informative=2,
-    n_redundant=0,
-    n_classes=3,
-    n_clusters_per_class=1,
-    class_sep=1.5,
-    random_state=1)
+    X, y = make_classification(
+                                n_samples=1200,
+                                n_features=2,
+                                n_informative=2,
+                                n_redundant=0,
+                                n_classes=3,
+                                n_clusters_per_class=1,
+                                class_sep=1.5,
+                                random_state=1)
 
     # Wyświetlenie danych syntetycznych na wykresie
     X0 = X[y == 0]
@@ -29,23 +29,34 @@ def synthetic_data():
     plt.legend()
     plt.show()
 
-    return X,y
+    return X, y
 
 def dry_beans():
-    data = pd.read_csv("datasets/Dry_Bean.csv",delimiter=";")
-    print(data.values[:,-1])
-    print(data.shape)
-#dry_beans()
+    data = pd.read_csv("datasets/Dry_Bean.csv", delimiter=";")
+    # print(data.values[:, -1])
+    # print(data.shape)
+    X = data.iloc[:, :-1]
+    y = data.iloc[:, -1]
+    return X, y
+# dry_beans()
 
 def steel_plates_defection():
-    data = pd.read_csv("datasets/Steel.csv",delimiter=";")
-    print(data.values[:,-1])
-    print(data.shape)
-#steel_plates_defection()
+    data = pd.read_csv("datasets/Steel.csv", delimiter=";")
+    # print(data.values[:,-1])
+    # print(data.shape)
+    X = data.iloc[:, :-1]
+    y = data.iloc[:, -1]
+    return X, y
+# steel_plates_defection()
 
 
 def sensors():
-    data = pd.read_csv("datasets/Sensorless_drive_diagnosis.csv",delimiter=";")
-    print(data.values[:,-1])
-    print(data.shape)
-#sensors()
+    data = pd.read_csv("datasets/Sensorless_drive_diagnosis.csv", delimiter=";")
+    # print(data.values[:,-1])
+    # print(data.shape)
+    X = data.iloc[:, :-1]
+    y = data.iloc[:, -1]
+    return X, y
+# sensors()
+
+
