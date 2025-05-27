@@ -3,7 +3,9 @@ from Read_data import *
 from Operations import *
 
 # Utworzenie danych syntetycznych
-X,y = synthetic_data()
+X,y = dry_beans()
+X = np.array(X)
+y = np.array(y)
 
 # Wyznaczenie klas znanych
 X_known = X[(y==0) | (y == 1)]

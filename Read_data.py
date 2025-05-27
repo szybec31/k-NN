@@ -14,7 +14,8 @@ def synthetic_data():
                                 n_clusters_per_class=1,
                                 class_sep=1.5,
                                 random_state=1)
-
+    X = X.astype(float)
+    y = y.astype(int)
     # Wyświetlenie danych syntetycznych na wykresie
     X0 = X[y == 0]
     X1 = X[y == 1]
