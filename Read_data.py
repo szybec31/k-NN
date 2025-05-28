@@ -28,6 +28,7 @@ def synthetic_data():
     plt.scatter(X1[:, 0], X1[:, 1], c="green", label="Klasa 1")
     plt.scatter(X2[:, 0], X2[:, 1], c="blue", label="Klasa 2")
     plt.legend()
+    plt.savefig("Syntetyczne.png")
     plt.show()
 
     return X, y

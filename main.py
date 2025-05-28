@@ -20,7 +20,7 @@ print("Wyniki predykcji i metryk dla różnych odległości:\n")
 for metric in metrics:
     print("=" * 60)
     # Inicjalizacja klasyfikatora z daną metryką
-    knn = Knn_with_OSR(k=3, metric=metric)
+    knn = Knn_with_OSR(k=10, metric=metric)
 
     # Trenowanie modelu
     knn.fit(X_train, y_train)
