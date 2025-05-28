@@ -1,9 +1,12 @@
-from Classification import *
 from Read_data import *
 from Operations import *
 
-# Utworzenie danych syntetycznych
-X,y = synthetic_data()
+# Wczytanie zbiorów, flaga pozwala rozróżnić wczytany zbiór
+X,y,flag = synthetic_data() # flag = 0
+#X,y,flag = dry_beans()     # flag = 1
+#X,y,flag = sensors()       # flag = 2
+
+
 X = np.array(X)
 y = np.array(y)
 
