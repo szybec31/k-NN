@@ -4,10 +4,12 @@ from Operations import *
 
 # Utworzenie danych syntetycznych
 X,y = synthetic_data()
+X = np.array(X)
+y = np.array(y)
 
 # Wyznaczenie klas znanych
-X_known = X[(y==0) | (y == 1)]
-y_known = y[(y==0) | (y == 1)]
+X_known = X[y<=1]
+y_known = y[y<=1]
 
 # Wyznaczenie klas nieznanych
 X_unknown = X[y==2]
