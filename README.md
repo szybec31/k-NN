@@ -31,44 +31,87 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
   <img src="results/euclidean_True_Predict.png" alt="Wykres Euklidesowy" width="600">
 </p>
 
+<h3>Macierz pomyłek dla metryki Euklidesowej</h3>
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Klasa 0</th>
+      <th>Klasa 1</th>
+      <th>Klasa obca 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Klasa 0</th>
+      <td align="center">77</td>
+      <td align="center">1</td>
+      <td align="center">3</td>
+    </tr>
+    <tr>
+      <th>Klasa 1</th>
+      <td align="center">0</td>
+      <td align="center">74</td>
+      <td align="center">6</td>
+    </tr>
+    <tr>
+      <th>Klasa obca 2</th>
+      <td align="center">1</td>
+      <td align="center">29</td>
+      <td align="center">368</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center"><strong>Procent poprawnych predykcji: 0.933</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
 <h3>Wykres dla metryki Chebysheva</h3>
 <p align="center">
   <img src="results/chebyshev_True_Predict.png" alt="Wykres Chebysheva" width="600">
 </p>
 
-<h3>Macierz pomyłek</h3>
+<h3>Macierz pomyłek dla metryki Chebysheva</h3>
 <div align="center">
+
 <table>
   <thead>
     <tr>
-      <th>Metryka</th>
-      <th>Dokładność (%)</th>
-      <th>Uwagi</th>
+      <th></th>
+      <th>Klasa 0</th>
+      <th>Klasa 1</th>
+      <th>Klasa obca 2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Euclidean</td>
-      <td>89.09</td>
-      <td>Najczęściej używana</td>
+      <th>Klasa 0</th>
+      <td align="center">74</td>
+      <td align="center">1</td>
+      <td align="center">6</td>
     </tr>
     <tr>
-      <td>Manhattan</td>
-      <td>90.88</td>
-      <td>Lepsza dla dużych różnic</td>
+      <th>Klasa 1</th>
+      <td align="center">0</td>
+      <td align="center">73</td>
+      <td align="center">7</td>
     </tr>
     <tr>
-      <td>Squared Euclidean</td>
-      <td>73.88</td>
-      <td>Wrażliwa na duże wartości</td>
+      <th>Klasa obca 2</th>
+      <td align="center">1</td>
+      <td align="center">29</td>
+      <td align="center">368</td>
     </tr>
     <tr>
-      <td>Chebyshev</td>
-      <td>88.37</td>
-      <td>Maksymalna różnica</td>
+      <td colspan="4" align="center"><strong>Procent poprawnych predykcji: 0.917</strong></td>
     </tr>
   </tbody>
 </table>
+
 </div>
 
 ## Środowisko programistyczne
