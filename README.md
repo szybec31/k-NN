@@ -35,8 +35,41 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 <p align="center">
   <img src="results/chebyshev_True_Predict.png" alt="Wykres Chebysheva" width="600">
 </p>
-Macierz pomyłek:
 
+<h3>Macierz pomyłek</h3>
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Metryka</th>
+      <th>Dokładność (%)</th>
+      <th>Uwagi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Euclidean</td>
+      <td>89.09</td>
+      <td>Najczęściej używana</td>
+    </tr>
+    <tr>
+      <td>Manhattan</td>
+      <td>90.88</td>
+      <td>Lepsza dla dużych różnic</td>
+    </tr>
+    <tr>
+      <td>Squared Euclidean</td>
+      <td>73.88</td>
+      <td>Wrażliwa na duże wartości</td>
+    </tr>
+    <tr>
+      <td>Chebyshev</td>
+      <td>88.37</td>
+      <td>Maksymalna różnica</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ## Środowisko programistyczne
 - Python 3.12 lub nowszy
