@@ -2,11 +2,13 @@
 
 Projekt został stworzony w oparciu o algorytm k-NN z zastosowaniem mechanizmu Open Set Recognition (OSR) do klasyfikacji
 danych na podstawie znanych klas, a także rozpoznawania obiektów należących do klas nieznanych w przypadku przekroczenia obliczonego progu.
+Na potrzeby testowania klasyfikatora można dostosowywać wartości k, prógu klasyfikacji, percentylu oraz prógu głosowania.
+
 Klasyfikacja została przeprowadzona na czterech różnych zbiorach danych:
 - Dry Beans
 - Steel Plates Defection
 - Sensors
-- Zbiórze syntatycznym
+- Zbiórze syntetycznym
 
 Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 - Metryka Euklidesowa
@@ -21,6 +23,19 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 - Obliczanie progu klasyfikacji za pomocą percentylu dla każdej metryki osobno
 - Tworzenie wykresów porównania etykiet rzeczywistych i przewidzianych
 - Wyświetlanie wyników: procent poprawnych predykcji oraz macierze pomyłek jako obiekty `DataFrame` (dla każdej metryki)
+
+## Przykładowe wyniki: wykresy końcowe i macierz pomyłek
+
+<h3>Wykres dla metryki Euklidesowej</h3>
+<p align="center">
+  <img src="results/euclidean_True_Predict.png" alt="Wykres Euklidesowy" width="600">
+</p>
+
+<h3>Wykres dla metryki Chebysheva</h3>
+<p align="center">
+  <img src="results/chebyshev_True_Predict.png" alt="Wykres Chebysheva" width="600">
+</p>
+Macierz pomyłek:
 
 
 ## Środowisko programistyczne
