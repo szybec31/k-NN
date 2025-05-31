@@ -1,0 +1,6 @@
+Metryka,Średnia,Odchylenie
+euclidean,0.91,0.017
+manhattan,0.908,0.011
+minkowski,0.906,0.016
+squared_euclidean,0.908,0.015
+chebyshev,0.912,0.013
