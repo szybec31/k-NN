@@ -1,0 +1,153 @@
+Wyniki predykcji i metryk dla różnych odległości:
+
+============================================================
+Threshold: 0.180
+Metryka: euclidean
+Macierz pomyłek w formie kodu w LaTeX:
+
+\begin{table}[H]
+\centering
+\caption{Macierz pomyłek metryki euclidean}
+\vspace{10pt}
+\label{tab:Macierz pomyłek euclidean}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Przewidziane}} \\
+\cline{2-4}
+\multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
+\cline{2-4}
+& 76 & 0 & 5 \\
+\cline{2-4}
+& 0 & 73 & 7 \\
+\cline{2-4}
+& 2 & 27 & 369 \\
+\cline{2-4}
+\hline
+\end{tabular}
+\end{table}
+
+
+Procent poprawnych predykcji: 0.926
+
+============================================================
+Threshold: 0.227
+Metryka: manhattan
+Macierz pomyłek w formie kodu w LaTeX:
+
+\begin{table}[H]
+\centering
+\caption{Macierz pomyłek metryki manhattan}
+\vspace{10pt}
+\label{tab:Macierz pomyłek manhattan}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Przewidziane}} \\
+\cline{2-4}
+\multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
+\cline{2-4}
+& 76 & 0 & 5 \\
+\cline{2-4}
+& 0 & 71 & 9 \\
+\cline{2-4}
+& 2 & 30 & 366 \\
+\cline{2-4}
+\hline
+\end{tabular}
+\end{table}
+
+
+Procent poprawnych predykcji: 0.915
+
+============================================================
+Threshold: 0.163
+Metryka: minkowski
+Macierz pomyłek w formie kodu w LaTeX:
+
+\begin{table}[H]
+\centering
+\caption{Macierz pomyłek metryki minkowski}
+\vspace{10pt}
+\label{tab:Macierz pomyłek minkowski}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Przewidziane}} \\
+\cline{2-4}
+\multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
+\cline{2-4}
+& 76 & 0 & 5 \\
+\cline{2-4}
+& 0 & 73 & 7 \\
+\cline{2-4}
+& 2 & 27 & 369 \\
+\cline{2-4}
+\hline
+\end{tabular}
+\end{table}
+
+
+Procent poprawnych predykcji: 0.926
+
+============================================================
+Threshold: 0.032
+Metryka: squared_euclidean
+Macierz pomyłek w formie kodu w LaTeX:
+
+\begin{table}[H]
+\centering
+\caption{Macierz pomyłek metryki squared_euclidean}
+\vspace{10pt}
+\label{tab:Macierz pomyłek squared_euclidean}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Przewidziane}} \\
+\cline{2-4}
+\multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
+\cline{2-4}
+& 76 & 0 & 5 \\
+\cline{2-4}
+& 0 & 73 & 7 \\
+\cline{2-4}
+& 2 & 27 & 369 \\
+\cline{2-4}
+\hline
+\end{tabular}
+\end{table}
+
+
+Procent poprawnych predykcji: 0.926
+
+============================================================
+Threshold: 0.149
+Metryka: chebyshev
+Macierz pomyłek w formie kodu w LaTeX:
+
+\begin{table}[H]
+\centering
+\caption{Macierz pomyłek metryki chebyshev}
+\vspace{10pt}
+\label{tab:Macierz pomyłek chebyshev}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}m{0.9cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|>{\centering\arraybackslash}m{2.7cm}|}
+\hline
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{Przewidziane}} \\
+\cline{2-4}
+\multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
+\cline{2-4}
+& 76 & 0 & 5 \\
+\cline{2-4}
+& 0 & 73 & 7 \\
+\cline{2-4}
+& 2 & 27 & 369 \\
+\cline{2-4}
+\hline
+\end{tabular}
+\end{table}
+
+
+Procent poprawnych predykcji: 0.926
+
+============================================================
