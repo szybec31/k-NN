@@ -15,6 +15,12 @@ def train_test_sets(X_known,y_known,X_unknown,y_unknown):
     unknown_label = y_known.max() + 1
     y_unknown = np.full_like(y_unknown, fill_value=unknown_label)
 
+    num_known = X_test_known.shape[0]
+    if X_unknown.shape[0] > num_known:
+        idx = np.random.choice(X_unknown.shape[0], num_known, replace=False)
+        X_unknown = X_unknown[idx]
+        y_unknown = y_unknown[idx]
+
     # Ostateczna postać zbioru testowego
     X_test_final = np.vstack([X_test_known, X_unknown])
     y_test_final = np.hstack([y_test_known, y_unknown])
