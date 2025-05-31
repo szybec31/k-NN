@@ -18,7 +18,3 @@ y_known = y[y<=1]
 X_unknown = X[y==2]
 y_unknown = y[y==2]
 #print(y_known)
-
-# Wyznaczenie zbiorów treningowych i testowych
-X_train, X_test, y_train, y_test = train_test_sets(X_known,y_known,X_unknown,y_unknown)
-

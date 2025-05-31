@@ -15,14 +15,21 @@ def train_test_sets(X_known,y_known,X_unknown,y_unknown):
     unknown_label = y_known.max() + 1
     y_unknown = np.full_like(y_unknown, fill_value=unknown_label)
 
+    # Rozłożenie klasy znanych i nieznanych po równo w zbiorze testowym - wybiera losowe próbki z unknown
+    num_known = X_test_known.shape[0]
+    if X_unknown.shape[0] > num_known:
+        idx = np.random.choice(X_unknown.shape[0], num_known, replace=False)
+        X_unknown = X_unknown[idx]
+        y_unknown = y_unknown[idx]
+
     # Ostateczna postać zbioru testowego
     X_test_final = np.vstack([X_test_known, X_unknown])
     y_test_final = np.hstack([y_test_known, y_unknown])
 
     # sprawdzenie kształtu tablic
-    print("X_test_known shape {}, X_unknown shape {} ".format(X_test_known.shape,X_unknown.shape))
-    print("y_test_known shape {}, y_unknown shape {} ".format(y_test_known.shape, y_unknown.shape))
-    print("Nowa etykieta klasy nieznanej:", unknown_label)
+    #print("X_test_known shape {}, X_unknown shape {} ".format(X_test_known.shape,X_unknown.shape))
+    #print("y_test_known shape {}, y_unknown shape {} ".format(y_test_known.shape, y_unknown.shape))
+    #print("Nowa etykieta klasy nieznanej:", unknown_label)
     # Zwraca potrzebne zbiory danych
     return X_train_known,X_test_final,y_train_known,y_test_final
 
@@ -57,4 +64,6 @@ def charts_true_predicted(X_test,y_test,y_pred,balanced_accuracy,metric):
     # Zapisanie wykresów do png
     plt.tight_layout(rect=[0, 0, 0.83, 0.95])
     plt.savefig("results/{}_True_Predict.png".format(metric))
+    plt.close(fig)
+
     #plt.show()
