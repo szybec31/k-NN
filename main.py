@@ -17,10 +17,13 @@ with open("results/results.txt", "w", encoding="utf-8") as f:
     f.write("Wyniki predykcji i metryk dla różnych odległości:\n\n")
     f.write("=" * 60 + "\n")
 
+print("X_known shape {}, X_unknown shape {} ".format(X_known.shape,X_unknown.shape))
+print("y_known shape {}, y_unknown shape {} ".format(y_known.shape, y_unknown.shape))
+
 for metric in metrics:
     scores = []
-    for i in range(10):
-        print("*************************** Iteracja: {} ***************************".format(i))
+    for j in range(10):
+        print("*************************** Iteracja: {} ***************************".format(j))
         X_train, X_test, y_train, y_test = train_test_sets(X_known, y_known, X_unknown, y_unknown)
 
         unique_classes = np.unique(np.concatenate((y_train, y_test)))
@@ -55,62 +58,12 @@ for metric in metrics:
         scores.append(balanced_accuracy)
         print(f"Dokładność poprawnych predykcji: {balanced_accuracy:.3f}\n")
 
-        #  Zapis do pliku w tej samej postaci co print
-        """
-        with open("results/results.txt", "a", encoding="utf-8") as f:
-            f.write(f"Threshold: {knn.threshold:.3f}\n")
-            f.write(f"Metryka: {metric}\n")
-            f.write("Macierz pomyłek:\n")
-            f.write("Rzeczywiste / Przewidziane\n")
-            f.write(cm_df.to_string())
-            f.write(f"\nProcent poprawnych predykcji: {balanced_accuracy:.3f}\n\n")
-            f.write("="*60 + "\n")
-        """
-
-        #  Zapis do pliku w postaci kodu w LaTeX
-        with open("results/results.txt", "a", encoding="utf-8") as f:
-            f.write(f"Threshold: {knn.threshold:.3f}\n")
-            f.write(f"Metryka: {metric}\n")
-            f.write("Macierz pomyłek w formie kodu w LaTeX:\n\n")
-
-            n_rows = len(cm_df)
-            n_cols = len(cm_df.columns)
-
-            f.write("\\begin{table}[H]\n")
-            f.write("\\centering\n")
-            f.write(f"\\caption{{Macierz pomyłek metryki {metric}}}\n")
-            f.write("\\vspace{10pt}\n")
-            f.write(f"\\label{{tab:Macierz pomyłek {metric}}}\n")
-            f.write("\\renewcommand{\\arraystretch}{1.3}\n")
-
-            col_format = "|>{\\centering\\arraybackslash}m{0.9cm}"
-            col_format += "|" + "|".join([">{\\centering\\arraybackslash}m{2.7cm}"] * n_cols) + "|"
-            f.write(f"\\begin{{tabular}}{{{col_format}}}\n")
-            f.write("\\hline\n")
-
-            f.write("\\multicolumn{1}{|c|}{} & \\multicolumn{" + str(n_cols) + "}{c|}{\\textbf{Przewidziane}} \\\\\n")
-            f.write("\\cline{2-" + str(n_cols + 1) + "}\n")
-
-            header_row = " & " + " & ".join(f"\\textbf{{{col}}}" for col in cm_df.columns) + " \\\\\n"
-            f.write("\\multirow{" + str(n_rows) + "}{*}{\\rotatebox{90}{\\textbf{Rzeczywiste}}} " + header_row)
-            f.write("\\cline{2-" + str(n_cols + 1) + "}\n")
-
-            for i, (idx, row) in enumerate(cm_df.iterrows()):
-                f.write("& ")
-                row_data = " & ".join(str(val) for val in row)
-                f.write(row_data + " \\\\\n")
-                f.write("\\cline{2-" + str(n_cols + 1) + "}\n")
-
-            f.write("\\hline\n")
-            f.write("\\end{tabular}\n")
-            f.write("\\end{table}\n\n")
-
-            f.write(f"\nProcent poprawnych predykcji: {balanced_accuracy:.3f}\n\n")
-            f.write("=" * 60 + "\n")
-
+        # Zapis wyników do pliku ---> LateX, dla każdej metryki tylko w iteracji 0
+        if j == 0:
+            zapis_wyników(metric, knn, cm_df, balanced_accuracy)
         # Utworzenie wykresu dla każdej metryki tylko w iteracji 0
-        if flag == 0 and i == 0:
-            charts_true_predicted(X_test,y_test,predictions,balanced_accuracy,metric)
+            if flag == 0:
+                charts_true_predicted(X_test,y_test,predictions,balanced_accuracy,metric)
 
     # Wyznaczenie średniej i odchylenia standardowego dla 10 powtórzeń danej metryki
     mean_score = round(np.mean(scores),3)
@@ -119,6 +72,7 @@ for metric in metrics:
     print("\n\033[34mŚrednia balanced accuracy: {:.3f} \033[39m".format(mean_score))
     print("\033[31mOdchylenie standardowe: {:.3f} \033[39m".format(std_score))
 
+f.close()
 df_results = pd.DataFrame(results_summary, columns=["Metryka", "Średnia", "Odchylenie"])
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 filename = f"results/wyniki_knn_{timestamp}.csv"
