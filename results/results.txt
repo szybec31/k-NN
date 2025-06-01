@@ -1,7 +1,7 @@
 Wyniki predykcji i metryk dla różnych odległości:
 
 ============================================================
-Threshold: 0.180
+Threshold: 0.155
 Metryka: euclidean
 Macierz pomyłek w formie kodu w LaTeX:
 
@@ -17,21 +17,21 @@ Macierz pomyłek w formie kodu w LaTeX:
 \cline{2-4}
 \multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
 \cline{2-4}
-& 76 & 0 & 5 \\
+& 75 & 2 & 4 \\
 \cline{2-4}
-& 0 & 73 & 7 \\
+& 0 & 74 & 6 \\
 \cline{2-4}
-& 2 & 27 & 369 \\
+& 1 & 10 & 150 \\
 \cline{2-4}
 \hline
 \end{tabular}
 \end{table}
 
 
-Procent poprawnych predykcji: 0.926
+Procent poprawnych predykcji: 0.928
 
 ============================================================
-Threshold: 0.227
+Threshold: 0.202
 Metryka: manhattan
 Macierz pomyłek w formie kodu w LaTeX:
 
@@ -47,21 +47,21 @@ Macierz pomyłek w formie kodu w LaTeX:
 \cline{2-4}
 \multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
 \cline{2-4}
-& 76 & 0 & 5 \\
+& 74 & 2 & 5 \\
 \cline{2-4}
-& 0 & 71 & 9 \\
+& 1 & 72 & 7 \\
 \cline{2-4}
-& 2 & 30 & 366 \\
+& 1 & 9 & 151 \\
 \cline{2-4}
 \hline
 \end{tabular}
 \end{table}
 
 
-Procent poprawnych predykcji: 0.915
+Procent poprawnych predykcji: 0.917
 
 ============================================================
-Threshold: 0.163
+Threshold: 0.162
 Metryka: minkowski
 Macierz pomyłek w formie kodu w LaTeX:
 
@@ -77,21 +77,21 @@ Macierz pomyłek w formie kodu w LaTeX:
 \cline{2-4}
 \multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
 \cline{2-4}
-& 76 & 0 & 5 \\
+& 75 & 1 & 5 \\
 \cline{2-4}
-& 0 & 73 & 7 \\
+& 2 & 76 & 2 \\
 \cline{2-4}
-& 2 & 27 & 369 \\
+& 5 & 9 & 147 \\
 \cline{2-4}
 \hline
 \end{tabular}
 \end{table}
 
 
-Procent poprawnych predykcji: 0.926
+Procent poprawnych predykcji: 0.930
 
 ============================================================
-Threshold: 0.032
+Threshold: 0.026
 Metryka: squared_euclidean
 Macierz pomyłek w formie kodu w LaTeX:
 
@@ -107,21 +107,21 @@ Macierz pomyłek w formie kodu w LaTeX:
 \cline{2-4}
 \multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
 \cline{2-4}
-& 76 & 0 & 5 \\
+& 77 & 1 & 3 \\
 \cline{2-4}
-& 0 & 73 & 7 \\
+& 1 & 76 & 3 \\
 \cline{2-4}
-& 2 & 27 & 369 \\
+& 1 & 15 & 145 \\
 \cline{2-4}
 \hline
 \end{tabular}
 \end{table}
 
 
-Procent poprawnych predykcji: 0.926
+Procent poprawnych predykcji: 0.934
 
 ============================================================
-Threshold: 0.149
+Threshold: 0.147
 Metryka: chebyshev
 Macierz pomyłek w formie kodu w LaTeX:
 
@@ -137,17 +137,17 @@ Macierz pomyłek w formie kodu w LaTeX:
 \cline{2-4}
 \multirow{3}{*}{\rotatebox{90}{\textbf{Rzeczywiste}}}  & \textbf{Klasa 0} & \textbf{Klasa 1} & \textbf{Klasa obca 2} \\
 \cline{2-4}
-& 76 & 0 & 5 \\
+& 75 & 1 & 5 \\
 \cline{2-4}
-& 0 & 73 & 7 \\
+& 0 & 79 & 1 \\
 \cline{2-4}
-& 2 & 27 & 369 \\
+& 2 & 16 & 143 \\
 \cline{2-4}
 \hline
 \end{tabular}
 \end{table}
 
 
-Procent poprawnych predykcji: 0.926
+Procent poprawnych predykcji: 0.934
 
 ============================================================
