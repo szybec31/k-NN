@@ -42,7 +42,8 @@ for metric in metrics:
     print(cm_df)
 
     # Dokładność
-    balanced_accuracy = balanced_accuracy_score(y_test,predictions)
+
+    balanced_accuracy = balanced_accuracy_score(y_test, predictions)
     print(f"Procent poprawnych predykcji: {balanced_accuracy:.3f}\n")
 
     # Utworzenie wykresu dla wybranej metryki
