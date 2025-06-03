@@ -31,7 +31,6 @@ class Knn_with_OSR(BaseEstimator):
                 distances.append(np.min(dists))  # można też użyć średniej z k
             # Ustaw próg jako percentyl (np. 95)
             self.threshold = np.percentile(distances, self.threshold_percentile)
-            print("threshold: {:.3f}".format(self.threshold))
 
     def euclidean_dist(self, x_test, x_train):
         return np.sqrt(np.sum((x_test - x_train) ** 2))
@@ -62,6 +61,7 @@ class Knn_with_OSR(BaseEstimator):
         if self.metric not in distance_functions:
             raise ValueError(f"Unsupported metric: {self.metric}")
 
+        print("threshold: {:.3f}".format(self.threshold))
         predictions = []
         for x_test in X_test:
             # Obliczanie odległości do każdego punktu w zbiorze treningowym
@@ -75,7 +75,7 @@ class Knn_with_OSR(BaseEstimator):
             min_distance = np.min(distances)
 
             # Sprawdzenie progu odległości
-            if min_distance > self.threshold or k_nearest_labels.count(most_common) / self.k < 0.95:
+            if min_distance > self.threshold or k_nearest_labels.count(most_common) / self.k < 0.20:
                 most_common = max(set(self.y_train)) + 1
             # Dodanie klasy do listy predykcji
             predictions.append(most_common)
