@@ -6,7 +6,7 @@ from sklearn.datasets import make_classification
 def synthetic_data():
     # Wygenerowanie Danych syntetycznych
     X, y = make_classification(
-                                n_samples=1200,
+                                n_samples=1500,
                                 n_features=2,
                                 n_informative=2,
                                 n_redundant=0,

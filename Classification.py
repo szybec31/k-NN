@@ -3,10 +3,11 @@ from sklearn.base import BaseEstimator
 
 class Knn_with_OSR(BaseEstimator):
 
-    def __init__(self, k, threshold=None, threshold_percentile=95, metric='euclidean'):
+    def __init__(self, k, threshold=None, vote_treshold=None, threshold_percentile=95, metric='euclidean'):
         self.k = k
         self.metric = metric
         self.threshold = threshold
+        self.vote_treshold = vote_treshold
         self.threshold_percentile = threshold_percentile
 
     def fit(self, X_train, y_train):
@@ -74,10 +75,16 @@ class Knn_with_OSR(BaseEstimator):
             most_common = max(set(k_nearest_labels), key=k_nearest_labels.count)
             min_distance = np.min(distances)
 
-            # Sprawdzenie progu odległości
-            if min_distance > self.threshold or k_nearest_labels.count(most_common) / self.k < 0.20:
-                most_common = max(set(self.y_train)) + 1
-            # Dodanie klasy do listy predykcji
-            predictions.append(most_common)
+            if self.vote_treshold == None:
+                if min_distance > self.threshold:
+                    most_common = max(set(self.y_train)) + 1
+                # Dodanie klasy do listy predykcji
+                predictions.append(most_common)
+            else:
+                # Sprawdzenie progu odległości
+                if min_distance > self.threshold or k_nearest_labels.count(most_common) / self.k < self.vote_treshold:
+                    most_common = max(set(self.y_train)) + 1
+                # Dodanie klasy do listy predykcji
+                predictions.append(most_common)
 
         return np.array(predictions)
