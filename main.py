@@ -23,8 +23,9 @@ print("y_known shape {}, y_unknown shape {} ".format(y_known.shape, y_unknown.sh
 for metric in metrics:
     scores = []
     for j in range(10):
-        print("*************************** Iteracja: {} ***************************".format(j))
-        X_train, X_test, y_train, y_test = train_test_sets(X_known, y_known, X_unknown, y_unknown)
+        random_state=(j+1)*1000
+        print("*************************** Iteracja: {}, random_state= {} ***************************".format(j,random_state))
+        X_train, X_test, y_train, y_test = train_test_sets(X_known, y_known, X_unknown, y_unknown,random_state)
 
         unique_classes = np.unique(np.concatenate((y_train, y_test)))
 
@@ -33,7 +34,7 @@ for metric in metrics:
         label_names[-1] = f"obca {class_labels[-1]}"
 
         # Inicjalizacja klasyfikatora z daną metryką
-        knn = Knn_with_OSR(k=3, threshold=None, metric=metric)
+        knn = Knn_with_OSR(k=790, threshold=None,vote_treshold=None, metric=metric)
 
         # Trenowanie modelu
         knn.fit(X_train, y_train)
@@ -68,12 +69,12 @@ for metric in metrics:
     # Wyznaczenie średniej i odchylenia standardowego dla 10 powtórzeń danej metryki
     mean_score = round(np.mean(scores),3)
     std_score = round(np.std(scores),3)
-    results_summary.append([metric, round(mean_score, 4), round(std_score, 4)])
+    results_summary.append([metric,"{} ({})".format(round(mean_score, 4), round(std_score, 4))])
     print("\n\033[34mŚrednia balanced accuracy: {:.3f} \033[39m".format(mean_score))
     print("\033[31mOdchylenie standardowe: {:.3f} \033[39m".format(std_score))
 
 f.close()
-df_results = pd.DataFrame(results_summary, columns=["Metryka", "Średnia", "Odchylenie"])
+df_results = pd.DataFrame(results_summary, columns=["Metryka", "Wynik"])
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 filename = f"results/wyniki_knn_{timestamp}.csv"
 df_results.to_csv(filename, index=False)

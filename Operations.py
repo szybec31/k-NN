@@ -5,15 +5,18 @@ from matplotlib.patches import Patch
 
 # Utworzenie danych treningowych - znane klasy, oraz zbiór testowy - X_test_known + X_unknwon
 # Jest to modyfikacja train_test_split jako dostosowanie do OSR
-def train_test_sets(X_known,y_known,X_unknown,y_unknown):
+def train_test_sets(X_known,y_known,X_unknown,y_unknown,random_state):
     X_train_known, X_test_known, y_train_known, y_test_known = train_test_split(
         X_known, y_known,
         test_size=0.2,  # 20% do testu
-        stratify=y_known)  # zachowanie proporcji klas
-        #random_state=42)  # powtarzalność
+        stratify=y_known,  # zachowanie proporcji klas
+        random_state=random_state)  # powtarzalność
 
     unknown_label = y_known.max() + 1
     y_unknown = np.full_like(y_unknown, fill_value=unknown_label)
+
+    # Powtarzalność losowania z unknown
+    np.random.seed(random_state)
 
     # Rozłożenie klasy znanych i nieznanych po równo w zbiorze testowym - wybiera losowe próbki z unknown
     num_known = X_test_known.shape[0]
