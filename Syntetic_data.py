@@ -20,6 +20,6 @@ X_known = X[mask]
 y_known = y[mask]
 
 # Wyznaczenie klas nieznanych
-X_unknown = X[y==2]
-y_unknown = y[y==2]
+X_unknown = X[y == 2]
+y_unknown = y[y == 2]
 #print(y_known)
