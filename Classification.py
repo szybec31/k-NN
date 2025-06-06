@@ -75,7 +75,7 @@ class Knn_with_OSR(BaseEstimator):
             most_common = max(set(k_nearest_labels), key=k_nearest_labels.count)
             min_distance = np.min(distances)
 
-            if self.vote_treshold == None:
+            if self.vote_treshold is None:
                 if min_distance > self.threshold:
                     most_common = max(set(self.y_train)) + 1
                 # Dodanie klasy do listy predykcji
