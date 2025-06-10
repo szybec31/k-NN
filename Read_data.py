@@ -42,8 +42,8 @@ def dry_beans():
 
 def letter_recognition():
     data = pd.read_csv("datasets/letter-recognition.csv", delimiter=";")
-    print(data.values[:,-1])
-    print(data.shape)
+    #print(data.values[:,-1])
+    #print(data.shape)
     X = data.iloc[:, :-1]
     y = data.iloc[:, -1]
     return X, y, 2

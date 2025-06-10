@@ -3,7 +3,7 @@ from sklearn.base import BaseEstimator
 
 class Knn_with_OSR(BaseEstimator):
 
-    def __init__(self, k, threshold=None, vote_treshold=None, threshold_percentile=95, metric='euclidean'):
+    def __init__(self, k=5, threshold=None, vote_treshold=None, threshold_percentile=95, metric='euclidean'):
         self.k = k
         self.metric = metric
         self.threshold = threshold
