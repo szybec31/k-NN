@@ -1,6 +1,6 @@
 import numpy as np
 from Classification import Knn_with_OSR
-from Syntetic_data import X_known, y_known, X_unknown, y_unknown, flag
+from Split_class import X_known, y_known, X_unknown, y_unknown, flag
 from sklearn.metrics import confusion_matrix
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score

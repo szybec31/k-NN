@@ -1,3 +1,4 @@
+import numpy as np
 from Read_data import *
 from Operations import *
 
@@ -12,9 +13,15 @@ X,y,flag = synthetic_data()             # flag = 0
 X = np.array(X)
 y = np.array(y)
 
+classes, counts = np.unique(y,return_counts=True)
+for cls, count in zip(classes,counts):
+    print(f"Klasa {cls}: {count} próbek")
+
+
+
 # Wyznaczenie klas znanych
-mask = (y >= 0) & (y <= 1)
-#mask = (y == 0) | (y == 1)
+mask = y < 2
+#mask = (y == 0) | (y == 3)
 
 X_known = X[mask]
 y_known = y[mask]
