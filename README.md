@@ -16,13 +16,6 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 - Metryka Kwadratowo-Euklidesowa
 - Metryka Chebysheva
 
-## Parametry klasyfikatora:
-- K
-- Metryka odległości
-- Próg
-- Percentyl
-- Próg głosowania
-
 ## Funkcje programu:
 - Tworzenie syntetycznego zbioru danych
 - Odczyt danych ze zbiorów
@@ -30,6 +23,17 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 - Implementacja klasyfikatora
 - Tworzenie wykresów porównania etykiet rzeczywistych i przewidzianych dla zbioru syntetycznego
 - Wyświetlanie wyników: Średnia z 10 powtórzeń, metryka balenced accuracy score
+
+## Instrykcja dla użytkownika:
+Należy odkomentować odpowiedni zbiór i dodonać podziału na klasy znane i nieznane.
+![img](manual_help/wyznaczenie klas.png)
+
+Należy określić badane metryki:
+![img](manual_help/metryki.png)
+
+Należy podać odpowiednie parametry konstruktora:
+![img](manual_help/Konstruktor.png)
+
 
 ## Przykładowe wyniki:
 
