@@ -25,13 +25,16 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 - Wyświetlanie wyników: Średnia z 10 powtórzeń, metryka balenced accuracy score
 
 ## Instrykcja dla użytkownika:
-Należy odkomentować odpowiedni zbiór i dodonać podziału na klasy znane i nieznane. Split_class.py
+Należy odkomentować odpowiedni zbiór i dodonać podziału na klasy znane i nieznane w pliku Split_class.py:
+
 ![img](manual_help/wyznaczenie_klas.png)
 
-Należy określić badane metryki: main.py
+Należy określić badane metryki w pliku main.py:
+
 ![img](manual_help/metryki.png)
 
-Należy podać odpowiednie parametry konstruktora: main.py
+Należy podać odpowiednie parametry konstruktora w pliku main.py:
+
 ![img](manual_help/Konstruktor.png)
 
 
