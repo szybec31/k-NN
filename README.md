@@ -4,7 +4,7 @@ Projekt został stworzony w oparciu o algorytm k-NN z zastosowaniem mechanizmu O
 danych na podstawie znanych klas, a także rozpoznawania obiektów należących do klas nieznanych w przypadku przekroczenia obliczonego progu.
 Na potrzeby testowania klasyfikatora można dostosowywać wartości k, prógu klasyfikacji, percentylu oraz prógu głosowania.
 
-Klasyfikacja została przeprowadzona na trzech różnych zbiorach danych:
+Klasyfikacja została przeprowadzona na trzech różnych zbiorach danych (dostępne w Datasets.zip):
 - Zbiorze syntetycznym
 - Dry Beans
 - Letter Recognition
@@ -150,6 +150,7 @@ Należy podać odpowiednie parametry konstruktora w pliku main.py:
 - `Read_data.py` - Odczyt danych ze zbiorów
 - `Split_class.py` - Podział zbioru na klasy znane i nieznane
 - `main.py` - Główny plik uruchamiający program
+- `Datasets.zip` - Zbiory rzeczywiste
 - `requirements.txt` - Plik z listą zależności potrzebnych do uruchomienia projektu
 - `.gitignore` - Plik określający, które pliki i foldery mają być pomijane przez Gita
 
