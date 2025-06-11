@@ -55,23 +55,4 @@ def penDigits():
     X = data.iloc[:, :-1]
     y = data.iloc[:, -1]
     return X, y, 3
-# white_wine()
-
-def sensors():
-    data = pd.read_csv("datasets/Sensorless_drive_diagnosis.csv", delimiter=";")
-    # print(data.values[:,-1])
-    # print(data.shape)
-    X = data.iloc[:, :-1]
-    y = data.iloc[:, -1]
-    return X, y, 4
-# sensors()
-
-def white_wine():
-    data = pd.read_csv("datasets/winequality-white.csv", delimiter=";")
-    # print(data.values[:,-1])
-    # print(data.shape)
-    X = data.iloc[:, :-1]
-    y = data.iloc[:, -1]
-    return X, y, 5
-# white_wine()
 
