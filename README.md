@@ -26,7 +26,7 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 
 ## Instrykcja dla użytkownika:
 Należy odkomentować odpowiedni zbiór i dodonać podziału na klasy znane i nieznane.
-![img](manual_help/wyznaczenie klas.png)
+![img](manual_help/wyznaczenie_klas.png)
 
 Należy określić badane metryki:
 ![img](manual_help/metryki.png)
