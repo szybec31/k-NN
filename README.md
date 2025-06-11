@@ -24,7 +24,7 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 - Tworzenie wykresów porównania etykiet rzeczywistych i przewidzianych dla zbioru syntetycznego
 - Wyświetlanie wyników: Średnia z 10 powtórzeń, metryka balenced accuracy score
 
-## Instrykcja dla użytkownika:
+## Instrukcja dla użytkownika:
 Należy odkomentować odpowiedni zbiór i dodonać podziału na klasy znane i nieznane w pliku Split_class.py:
 
 ![img](manual_help/wyznaczenie_klas.png)
