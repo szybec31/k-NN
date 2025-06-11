@@ -18,6 +18,7 @@ Dodatkowo program korzysta z pięciu metryk do klasyfikacji obiektów:
 
 ## Parametry klasyfikatora:
 - K
+- Metryka odległości
 - Próg
 - Percentyl
 - Próg głosowania
