@@ -7,8 +7,6 @@ X,y,flag = synthetic_data()             # flag = 0
 #X,y,flag = dry_beans()                 # flag = 1
 #X,y,flag = letter_recognition()        # flag = 2
 #X,y,flag = penDigits()                 # flag = 3
-#X,y,flag = sensors()                   # flag = 4
-#X,y,flag = white_wine()                # flag = 5
 
 X = np.array(X)
 y = np.array(y)
